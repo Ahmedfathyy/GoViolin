@@ -1,0 +1,22 @@
+apiversion: apps/v1
+kind: Deployment
+metadata:
+  name: go-deployment
+  labels:
+    app: go
+spec:
+  selector:
+    matchlabels:
+      app: go
+  template:
+    metadata:
+      name: go-deployment
+      labels:
+        app: go
+      
+  spec:
+    containers:
+    - name: go
+      image: ahmedfathyy/goviolin
+      ports:
+      - containerport: 8080
